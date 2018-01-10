@@ -1,8 +1,11 @@
+var howtoplayX = 250
+var howtoplayY = 500
+var howtoplayW = 200
+var howtoplayH = 50
 
 function setup(){
   createCanvas(1400,750);
   console.log(mouseX, mouseY);
-
 }
 
 function draw(){
@@ -10,6 +13,7 @@ function draw(){
   drawTitle();
   // draw what is in side the funtion drawBoutton and drawHowtoplaybotton
   drawBoutton();
+
 }
 
 function drawTitle(){
@@ -28,7 +32,7 @@ function drawTitle(){
 
 function drawBoutton(){
 
-  // the top left hand conter
+  // the top left hand conter(how to play)
   fill(100);
   rect(250,500,200,50);
   // the bottom left hand conter
@@ -52,8 +56,7 @@ function drawHowtoplaybotton() {
   var s = '  How to play';
   fill(0);
   textSize(30);
-  text(s, 250,540);
-
+  text(s, 250,540)
 }
 
 function drawSettingbotton() {
@@ -78,5 +81,14 @@ function drawMadeby(){
   textSize(30);
   text(s, 940,690);
 
+}
+function mouseClicked(){
+print('X')
+print(mouseX)
+print('Y')
+print(mouseY)
+if (( mouseX > howtoplayX && mouseX < howtoplayX + howtoplayW ) && ( mouseY > howtoplayY && mouseY < howtoplayY + howtoplayH )) {
+window.location= "howtoplay.html"
+}
 
 }
